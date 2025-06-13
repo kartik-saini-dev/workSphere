@@ -12,6 +12,7 @@ const connectToDb = async () => {
   }
   try {
     const db = await mongoose.connect(MONGODB_URI, {
+      dbName: 'WorkSphere',
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
