@@ -4,13 +4,14 @@
 import { useState ,useContext,useEffect} from "react";
 import { useSession } from "next-auth/react";
 import { FiArrowRightCircle } from "react-icons/fi";
-import OverviewTab from "@/components/createservice/OverviewTab";
-import PricingTab from "@/components/createservice/PricingTab";
-import RequirementsTab from "@/components/createservice/RequirementTab";
-import PublishTab from "@/components/createservice/PublishTab";
-import GalleryTab from "@/components/createservice/GalleryTab";
-import DescriptionTab from "@/components/createservice/DescriptionTab";
+import OverviewTab from "@/components/createService/OverviewTab";
+import PricingTab from "@/components/createService/PricingTab";
+import RequirementsTab from "@/components/createService/RequirementTab";
+import PublishTab from "@/components/createService/PublishTab";
+import GalleryTab from "@/components/createService/GalleryTab";
+import DescriptionTab from "@/components/createService/DescriptionTab";
 import { GlobalContext } from "@/context";
+
 
 const TABS = [
   { id: 1, name: "Overview", icon: "📝" },
