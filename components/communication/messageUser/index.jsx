@@ -258,12 +258,12 @@ const sendMessage = (messageInput, setMessageInput) => {
 const uploadToCloudinary = async (file) => {
   const formData = new FormData();
   formData.append("file", file);
-  formData.append("upload_preset", "....."); // Replace with your upload preset
-  formData.append("cloud_name", "cloudinary cloud name"); // Replace with your Cloudinary cloud name
+  formData.append("upload_preset", "o8kvmsp2"); // Replace with your upload preset
+  formData.append("cloud_name", "dc1kpjvo6"); // Replace with your Cloudinary cloud name
 
   try {
     const response = await fetch(
-       "https://api.cloudinary.com/v1_1/cloudinary cloud name/image/upload", // Replace with your Cloudinary URL everything same just after V1_1/ put your cloudinary cloud name 
+       "https://api.cloudinary.com/v1_1/dc1kpjvo6/image/upload", // Replace with your Cloudinary URL everything same just after V1_1/ put your cloudinary cloud name 
       {
         method: "POST",
         body: formData,
