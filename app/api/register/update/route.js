@@ -118,7 +118,7 @@ export async function PUT(req) {
 
     return NextResponse.json({
       success: false,
-      message: "An error occurred. Please try again later.",
+     message: `An error occurred. Please try again later. this error ${error}`,
     });
   }
 }
