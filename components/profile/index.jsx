@@ -54,12 +54,12 @@ function Profile() {
   const uploadToCloudinary = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "....."); // here upload preset from cloudinary 
-    formData.append("cloud_name", "......"); // here cloudinary cloud name watch env file for it 
+    formData.append("upload_preset", "o8kvmsp2"); // here upload preset from cloudinary 
+    formData.append("cloud_name", "dc1kpjvo6"); // here cloudinary cloud name watch env file for it 
 
     try {
       const response = await fetch(
-        "https://api.cloudinary.com/v1_1/here cloudinary cloud name /image/upload",
+        "https://api.cloudinary.com/v1_1/dc1kpjvo6/image/upload",
         { method: "POST", body: formData }
       );
       const data = await response.json();
