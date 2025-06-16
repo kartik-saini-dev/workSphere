@@ -5,8 +5,8 @@ import Notification from "@/components/Notification";
 import { useState , useContext,useEffect} from "react";
 import axios from "axios";
 import { GlobalContext } from "@/context";
-import { PulseLoader } from "react-spinners";
 import { useRouter } from 'next/navigation'
+import ComponentLevelLoader from "../Loader/componentLevelLoader";
 
 export default function VerifyEmail(){
   const router = useRouter();
@@ -60,24 +60,19 @@ export default function VerifyEmail(){
 
    },[token]);
 
-   if (isVerifying) {
-    return (
-        <>
-        <div className="w-full min-h-screen flex justify-center items-center">
-        <PulseLoader
-          color={"#000000"}
-          loading={isVerifying}
-          size={30}
-          data-testid="loader"
-        />
-         <p className="mt-4 text-lg font-semibold text-gray-600">
-            Verifying your email. Please wait...
-          </p>
-      </div>
-      <Notification/>
-        </>
-      
-    );
-  }
+   
+     if (isVerifying) {
+       return (
 
+   
+       <>
+       
+         <ComponentLevelLoader text="  Verifying your email. Please wait..." color="text-red-500" size="w-12 h-12" /> ;
+        
+       <Notification/>
+       </>
+     
+       )
+
+    }
 }
