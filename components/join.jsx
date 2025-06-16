@@ -4,9 +4,9 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { FcGoogle } from "react-icons/fc"; // Google Icon
-import { FaGithub } from "react-icons/fa"; // GitHub Icon
-import { AiOutlineClose } from "react-icons/ai"; // Close Icon
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import { AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 
 export default function Join({ onClose = () => {} }) {
@@ -21,16 +21,15 @@ export default function Join({ onClose = () => {} }) {
   return (
     <>
       {isModalOpen && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-white rounded-lg shadow-lg flex max-w-3xl w-full min-h-[600px]">
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative bg-white rounded-lg shadow-lg flex max-w-3xl w-full h-[600px]">
             {/* Left Section: Image */}
-            <div className="hidden md:block w-1/2">
+            <div className="hidden md:block w-1/2 relative">
               <Image
                 src="/code.jpg"
                 alt="Authentication Illustration"
-                width={400}
-                height={600}
-                className="h-full w-full object-cover rounded-l-lg"
+                fill
+                className="object-cover rounded-l-lg"
                 priority
               />
             </div>
