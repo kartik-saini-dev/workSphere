@@ -142,7 +142,7 @@ export const authOptions = {
       await connectToDb();
 
       if (user) {
-      token.id = user._id;
+      token.id = user.id;
         token.name = user.name;
         token.email = user.email;
         token.picture = user.image;
