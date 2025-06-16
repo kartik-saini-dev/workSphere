@@ -12,7 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Notification from "../Notification";
 function Profile() {
   const router = useRouter();
-  const { data: { user: session } = {}, status } = useSession();
+  const { data: { user: session } = {}, status , update } = useSession();
   const [imageHover, setImageHover] = useState(false);
   const [stats, setStatus] = useState(false);
   const [image, setImage] = useState(undefined);
@@ -111,6 +111,7 @@ function Profile() {
       );
   
       if (response.data.success) {
+        await update();
         toast.success("Profile updated successfully.");
       } else {
         toast.error("Error updating profile.");
@@ -148,7 +149,7 @@ function Profile() {
             onMouseLeave={() => setImageHover(false)}
           >
             <div className="relative h-36 w-36 bg-gray-200 rounded-full overflow-hidden border-4 border-blue-500">
-              {session?.image || stats ? (
+              {session?.image && stats ? (
                 <Image
                   src={image ? URL.createObjectURL(image) : session.image}
                   alt="Profile"
