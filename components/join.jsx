@@ -1,4 +1,5 @@
 "use client";
+
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -8,7 +9,7 @@ import { FaGithub } from "react-icons/fa"; // GitHub Icon
 import { AiOutlineClose } from "react-icons/ai"; // Close Icon
 import Image from "next/image";
 
-export default function Join({ onClose }) {
+export default function Join({ onClose = () => {} }) {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const router = useRouter();
 
@@ -21,20 +22,21 @@ export default function Join({ onClose }) {
     <>
       {isModalOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 z-30 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-white rounded-lg shadow-lg flex max-w-3xl w-full">
+          <div className="relative bg-white rounded-lg shadow-lg flex max-w-3xl w-full min-h-[600px]">
             {/* Left Section: Image */}
             <div className="hidden md:block w-1/2">
               <Image
-                src="/code.jpg" // Ensure this path is correct and the image exists in the public folder
+                src="/code.jpg"
                 alt="Authentication Illustration"
-                width={400} // Specify the width
-                height={600} // Specify the height
+                width={400}
+                height={600}
                 className="h-full w-full object-cover rounded-l-lg"
+                priority
               />
             </div>
 
             {/* Right Section: Content */}
-            <div className="relative w-full md:w-1/2 p-8">
+            <div className="relative w-full md:w-1/2 p-8 flex flex-col justify-center">
               {/* Close button */}
               <span
                 className="absolute top-2 right-2 cursor-pointer text-gray-600 hover:text-gray-800"
@@ -53,6 +55,7 @@ export default function Join({ onClose }) {
               {/* Sign-In Buttons */}
               <div className="flex flex-col gap-4">
                 <button
+                  type="button"
                   onClick={() => signIn("google")}
                   className="flex items-center justify-center bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 hover:bg-gray-200"
                 >
@@ -60,6 +63,7 @@ export default function Join({ onClose }) {
                   Sign in with Google
                 </button>
                 <button
+                  type="button"
                   onClick={() => signIn("github")}
                   className="flex items-center justify-center bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 hover:bg-gray-200"
                 >
@@ -77,6 +81,7 @@ export default function Join({ onClose }) {
 
               {/* Login and Register Options */}
               <button
+                type="button"
                 onClick={() => router.push("/signIn")}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-5 py-2.5 text-center"
               >
