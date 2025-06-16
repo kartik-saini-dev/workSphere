@@ -25,8 +25,11 @@ function Profile() {
     img: "",
   });
 
+  useEffect(()=>{
+    console.log(session, "this is session");
+  },[]);
   const { setPageLevelLoader } = useContext(GlobalContext);
-
+ 
   useEffect(() => {
     setPageLevelLoader(false);
   }, [setPageLevelLoader]);
@@ -44,7 +47,7 @@ function Profile() {
 
   useEffect(() => {
     // If the session is not authenticated, show the login notification and redirect
-   
+  
   }, [status, router]);
 
   if (status === "error") {
