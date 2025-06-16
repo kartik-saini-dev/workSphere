@@ -124,7 +124,7 @@ function Profile() {
   };
 
   const inputClassName =
-    "block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 p-4 focus:ring-green-500 focus:border-green-500 shadow-sm";
+    "block w-full text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 p-4 focus:ring-blue-500 focus:border-blue-500 shadow-sm";
   const labelClassName = "mb-2 text-base font-medium text-gray-700";
 
   return (
@@ -147,7 +147,7 @@ function Profile() {
             onMouseEnter={() => setImageHover(true)}
             onMouseLeave={() => setImageHover(false)}
           >
-            <div className="relative h-36 w-36 bg-gray-200 rounded-full overflow-hidden border-4 border-green-500">
+            <div className="relative h-36 w-36 bg-gray-200 rounded-full overflow-hidden border-4 border-blue-500">
               {session?.image || stats ? (
                 <Image
                   src={image ? URL.createObjectURL(image) : session.image}
@@ -230,7 +230,7 @@ function Profile() {
       className={`w-full text-lg font-semibold px-5 py-3 rounded-md transition-all duration-300 ${
         loading
           ? "bg-gray-400 cursor-not-allowed"
-          : "bg-green-500 hover:bg-green-600 text-white"
+          : "bg-blue-500 hover:bg-blue-600 text-white"
       }`}
       type="button"
       onClick={!loading ? setProfile : null} // Prevent multiple clicks during loading
