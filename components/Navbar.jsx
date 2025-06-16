@@ -287,7 +287,7 @@ function Navbar() {
                 className="cursor-pointer relative"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setIsContextMenuVisible(true);
+                 setIsContextMenuVisible(!isContextMenuVisible);
                 }}
                 title="Profile"
               >
