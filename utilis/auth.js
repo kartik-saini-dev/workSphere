@@ -138,15 +138,34 @@ export const authOptions = {
       }
       return true;
     },
+    async jwt({ token, user, trigger, session }) {
+      await connectToDb();
+
+      if (user) {
+        token.id = user.id;
+        token.name = user.name;
+        token.email = user.email;
+        token.picture = user.image;
+      }
+
+      if (trigger === "update") {
+        const dbUser = await User.findOne({ email: token.email });
+        if (dbUser) {
+          token.name = dbUser.username;
+          token.picture = dbUser.profilePic;
+        }
+      }
+
+      return token;
+    },
 
     // Session callback
-    async session({ session }) {
-      if (session) {
-        const sessionUser = await User.findOne({ email: session?.user?.email });
-        if (sessionUser) {
-          session.user.userId = sessionUser._id;
-           session.user.createdAt = sessionUser.createdAt;
-        }
+    async session({ session, token }) {
+      if (token) {
+        session.user.userId = token.id;
+        session.user.name = token.name;
+        session.user.email = token.email;
+        session.user.image = token.picture;
       }
       return session;
     },
