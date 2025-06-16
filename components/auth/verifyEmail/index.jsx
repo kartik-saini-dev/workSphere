@@ -6,7 +6,7 @@ import { useState , useContext,useEffect} from "react";
 import axios from "axios";
 import { GlobalContext } from "@/context";
 import { useRouter } from 'next/navigation'
-import ComponentLevelLoader from "@components/Loader/componentLevelLoader";
+import ComponentLevelLoader from "@/components/Loader/componentLevelLoader";
 
 export default function VerifyEmail(){
   const router = useRouter();
