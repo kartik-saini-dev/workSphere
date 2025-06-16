@@ -23,7 +23,7 @@ function UnauthorizedPage() {
         </p>
         <button
           onClick={handleLogin}
-          className="w-full bg-[#1DBF73] text-white py-2 px-4 rounded-lg text-lg font-medium hover:bg-[#17a864] transition-all duration-200"
+     className="w-full bg-[#3B82F6] text-white py-2 px-4 rounded-lg text-lg font-medium hover:bg-[#2563EB] transition-all duration-200"
         >
           Go to Login
         </button>
