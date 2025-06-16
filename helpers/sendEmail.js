@@ -56,7 +56,7 @@ export const sendEmail = async (email,emailType,userId)=>{
             html: `
               <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 10px;">
                 <header style="text-align: center; padding-bottom: 20px;">
-                  <h1 style="color: #4CAF50; margin: 0;">${emailType === "Verify" ? "Welcome to Our Website!" : "Reset Your Password"}</h1>
+                  <h1 style="color: #3B82F6; margin: 0;">${emailType === "Verify" ? "Welcome to Our Website!" : "Reset Your Password"}</h1>
                   <p style="color: #555;">We're glad to have you on board.</p>
                 </header>
                 <main>
@@ -68,7 +68,7 @@ export const sendEmail = async (email,emailType,userId)=>{
                     }
                   </p>
                   <div style="text-align: center; margin: 20px 0;">
-                    <a href="${emailType === "Verify" ? verificationLink : resetLink}" style="background-color: #4CAF50; color: white; padding: 12px 24px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block;">
+                    <a href="${emailType === "Verify" ? verificationLink : resetLink}" style="background-color: #3B82F6; color: white; padding: 12px 24px; text-decoration: none; font-size: 16px; border-radius: 5px; display: inline-block;">
                       ${emailType === "Verify" ? "Verify Email" : "Reset Password"}
                     </a>
                   </div>
@@ -81,7 +81,7 @@ export const sendEmail = async (email,emailType,userId)=>{
                   </p>
                 </main>
                 <footer style="text-align: center; color: #777; font-size: 14px; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px;">
-                  <p>Need help? Contact us at <a href="mailto:kartiksaini71011@gmail.com" style="color: #4CAF50; text-decoration: none;">kartiksaini71011@gmail.com</a></p>
+                  <p>Need help? Contact us at <a href="mailto:kartiksaini71011@gmail.com" style="color: #3B82F6; text-decoration: none;">kartiksaini71011@gmail.com</a></p>
                   <p style="margin: 0;">&copy; ${new Date().getFullYear()} Our Website. All rights reserved.</p>
                 </footer>
               </div>
