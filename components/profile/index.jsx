@@ -114,6 +114,7 @@ function Profile() {
         await update();
         toast.success("Profile updated successfully.");
       } else {
+         console.error("Error saving profile124:", response.data);
         toast.error("Error updating profile.");
       }
     } catch (err) {
