@@ -1,7 +1,7 @@
 "use client"
 
 import axios from "axios";
-import { useSession } from "next-auth/react";
+import { useSession , getSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState, useContext } from "react";
@@ -114,7 +114,7 @@ function Profile() {
       );
   
       if (response.data.success) {
-        
+        await getSession();
         toast.success("Profile updated successfully.");
       } else {
          console.error("Error saving profile124:", response.data);
