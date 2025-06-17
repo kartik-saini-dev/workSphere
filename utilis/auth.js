@@ -145,6 +145,7 @@ export const authOptions = {
         if (sessionUser) {
           session.user.userId = sessionUser._id;
            session.user.createdAt = sessionUser.createdAt;
+            session.user.image = sessionUser.profilePic;
         }
       }
       return session;
