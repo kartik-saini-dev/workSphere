@@ -36,7 +36,7 @@ const ImageUpload = ({ onChange }) => {
   return (
     <div>
       <CldUploadWidget
-        uploadPreset="....." // here your cloudinary upload preset 
+        uploadPreset="o8kvmsp2" // here your cloudinary upload preset 
         onUpload={onUpload} // Trigger on upload complete
         onProgress={handleProgress} // Track upload progress
       >
