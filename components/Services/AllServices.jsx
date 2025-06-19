@@ -26,12 +26,7 @@ function Allservices({ servicesData , pagination  ,username}) {
     setCurrentPage(page);
     try {
       const response = await fetch(`/api/services?username=${username}&page=${page}&itemsPerPage=${itemsPerPage}`);
-      // const { data } = await response.json();
-      //   console.log(data,"this is dat");
-       const result = await response.json();
-
-  console.log("Full response JSON:", result);
-
+      const { data } = await response.json();
       setservices(data);
     } catch (error) {
       console.error("Error fetching services:", error);
