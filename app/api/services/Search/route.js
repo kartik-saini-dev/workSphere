@@ -34,7 +34,7 @@ export async function GET(req) {
       ],
     };
 
-    if (subCategory) {
+   if (subCategory && subCategory !== "null") {
       const subCategoryRegex = new RegExp(subCategory.replace(/\s+/g, ".*"), "i");
       filterQuery.$and = [
         { $or: [{ category: categoryRegex }, { keywords: categoryRegex }] },
