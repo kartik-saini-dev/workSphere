@@ -26,7 +26,7 @@ function Pricing({ serviceData }) {
     if (!pricingTier) return null;
 
     return (
-      <div className="border-t pt-5">
+      <div className="border-t pt-20">
         <div className="flex flex-wrap justify-between">
           <h4 className="text-sm md:text-md font-normal text-gray-700">{serviceData.shortDesc}</h4>
           <h6 className="font-medium text-sm md:text-lg text-blue-600">${pricingTier.price}</h6>
