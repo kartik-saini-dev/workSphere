@@ -261,6 +261,7 @@ function Details({ serviceData }) {
             className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-blue-600 text-white p-3 sm:p-4 rounded-full shadow-lg flex items-center gap-2 cursor-pointer hover:bg-[blue] transition-all duration-300"
             onClick={handleClick}
           >
+             <Toaster /> 
             <FaCommentAlt />
             <span className="hidden sm:inline">Message Seller</span>
           </div>
