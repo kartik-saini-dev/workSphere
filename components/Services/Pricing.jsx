@@ -75,7 +75,7 @@ function Pricing({ serviceData }) {
   };
 
   return (
-    <div className="mb-10 pt-20 w-full bg-white p-6 rounded-lg shadow-md font-roboto">
+    <div className="mb-10 mt-20 w-full bg-white p-6 rounded-lg shadow-md font-roboto">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
         .font-roboto {
