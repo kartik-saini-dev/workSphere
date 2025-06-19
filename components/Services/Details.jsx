@@ -87,7 +87,7 @@ function Details({ serviceData }) {
   return (
     <>
       {serviceData && currentImage !== "" && (
-        <div className="col-span-2 flex flex-col gap-6 px-4 sm:px-8 lg:px-16">
+        <div className="col-span-2 flex flex-col gap-6 px-4 sm:px-8 lg:px-16 pt-20">
           <h2 className="text-2xl sm:text-3xl font-semibold text-[#404145] mb-4">
             {serviceData.title}
           </h2>
