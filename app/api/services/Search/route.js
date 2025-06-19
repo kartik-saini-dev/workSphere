@@ -51,7 +51,9 @@ export async function GET(req) {
     .limit(itemsPerPage);
    
     console.log(foundServices,"this is services");
-
+console.log("🔍 Filter Query:", filterQuery);
+console.log("🧠 Category Regex:", categoryRegex);
+console.log("📦 Found Services:", foundServices.length);
   if (foundServices.length) {
       return NextResponse.json({
         success: true,
