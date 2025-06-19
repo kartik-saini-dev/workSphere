@@ -11,7 +11,7 @@ import { GlobalContext } from "@/context";
 import { useContext } from "react";
 import ComponentLevelLoader from "../Loader/componentLevelLoader";
 import AddReview from "./AddReview";
-import { toast } from "sonner";
+import { toast ,Toaster} from "sonner";
 
 function Details({ serviceData }) {
   const [currentImage, setCurrentImage] = useState("");
