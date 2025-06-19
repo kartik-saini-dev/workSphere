@@ -57,8 +57,8 @@ export default function Categoryservices({ servicesData = [], pagination = {}, c
       const response = await fetch(
         `/api/services/Search?category=${category}&subCategory=${subCategory}&page=${page}&itemsPerPage=${itemsPerPage}`
       );
-      const result = await response.json();
-     console.log(result);
+      const {data} = await response.json();
+
       setservices(data); // Set new services data
       applyFilters(data); // Apply filters to the new services data
     } catch (error) {
