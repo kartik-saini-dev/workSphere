@@ -53,7 +53,10 @@ export async function GET(req) {
     console.log(foundServices,"this is services");
 console.log("🔍 Filter Query:", filterQuery);
 console.log("🧠 Category Regex:", categoryRegex);
-console.log("📦 Found Services:", foundServices.length);
+console.log("📦 Found Services:", page);
+    console.log("📦 itemsperpage", itemsPerPage);
+
+    console.log("📦 page", foundServices.length);
   if (foundServices.length) {
       return NextResponse.json({
         success: true,
