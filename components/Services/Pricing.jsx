@@ -63,7 +63,7 @@ function Pricing({ serviceData }) {
                 setCurrentUpdatedservice(serviceData);
                 router.push("/projects/create");
               } else {
-                router.push(`/checkout?serviceId=${serviceData._id}&pricing=${tier}`);
+                router.push(`/checkout?projectId=${serviceData._id}&pricing=${tier}`);
               }
             }
           }}
@@ -103,11 +103,10 @@ function Pricing({ serviceData }) {
             <button
               key={tier}
               onClick={() => setSelectedPricing(tier)}
-              className={`flex-1 py-2 px-4 text-center text-sm md:text-base font-semibold rounded-full ${
-                selectedPricing === tier
+              className={`flex-1 py-2 px-4 text-center text-sm md:text-base font-semibold rounded-full ${selectedPricing === tier
                   ? "bg-blue-600 text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-blue-100"
-              } transition-all duration-300`}
+                } transition-all duration-300`}
             >
               {tier.charAt(0).toUpperCase() + tier.slice(1)}
             </button>
