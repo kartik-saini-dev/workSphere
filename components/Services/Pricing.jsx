@@ -31,7 +31,7 @@ function Pricing({ serviceData }) {
           <h4 className="text-sm md:text-md font-normal text-gray-700">{serviceData.shortDesc}</h4>
           <h6 className="font-medium text-sm md:text-lg text-blue-600">${pricingTier.price}</h6>
         </div>
-
+        <Toaster />
         <div className="text-gray-700 font-semibold text-xs md:text-sm flex flex-wrap gap-3 md:gap-6 mt-2">
           <div className="flex items-center gap-2">
             <FiClock className="text-lg md:text-xl text-blue-600" />
@@ -63,7 +63,7 @@ function Pricing({ serviceData }) {
                 setCurrentUpdatedservice(serviceData);
                 router.push("/projects/create");
               } else {
-                router.push(`/checkout?projectId=${serviceData._id}&pricing=${tier}`);
+                router.push(`/checkout?serviceId=${serviceData._id}&pricing=${tier}`);
               }
             }
           }}
@@ -75,7 +75,7 @@ function Pricing({ serviceData }) {
   };
 
   return (
-    <div className="mb-10 mt-20 w-full bg-white p-6 rounded-lg shadow-md font-roboto">
+    <div className="mb-10 w-full bg-white p-6 rounded-lg shadow-md font-roboto">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
         .font-roboto {
