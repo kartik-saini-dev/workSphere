@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react"; // need this to use searchparams or can call checkout component paste all the code without suspense in component and import here 
 
-const stripePromise = loadStripe("pk_test_...."); //your stripe publishable key 
+const stripePromise = loadStripe("pk_test_51O4jqWSERrAVyx8wCHmmphyRX3mPfOpv5bywxw3t02clAQ5YgYWwvwoSMIrhe7gmNTJQrbfqjoCIxAROpvwqtbK100dgiBsI8a"); //your stripe publishable key 
 
 function CheckoutComponent() {
   const [isLoading, setIsLoading] = useState(false);
