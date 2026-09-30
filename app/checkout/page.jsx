@@ -14,7 +14,9 @@ const stripePromise = loadStripe("pk_test_...."); //your stripe publishable key
 function CheckoutComponent() {
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = useSearchParams();
-  const serviceId = searchParams.get("serviceId");
+
+const serviceId = searchParams.get("serviceId") || searchParams.get("projectId");
+
   const tier = searchParams.get("pricing");
 
   const { data, status } = useSession();
